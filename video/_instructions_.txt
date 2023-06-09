@@ -1,0 +1,5 @@
+A côté de ce fichier, 
+il faut mettre la vidéo d'intro qui s'appelle :
+  intro.mp4
+
+voilà

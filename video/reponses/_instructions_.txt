@@ -1,0 +1,2 @@
+Dans ce dossier,
+il faut mettre plein de vidéos qui seront lues en ordre aléatoire.
