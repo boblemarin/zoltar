@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ZOLTAR</title>
+    <link rel="stylesheet" type="text/css" href="css/zoltar.css">
+  </head>
+  <body class="idle">
+    
+    <div class="container container-intro">
+      <video id="intro-video" class="fs-video" loop="true">
+        <source src="video/intro.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+    
+    <div class="container container-choice">
+      <div class="choice-questions">
+        <div class="choice-question choice-question-1">A) QUEL EST LE SENS DE MA VIE ?</div>
+        <div class="choice-question choice-question-2">B) VAIS-JE TROUVER LE BONHEUR ?</div>
+        <div class="choice-question choice-question-3">C) POURQUOI ?</div>
+      </div>
+    </div>
+    
+    <div class="container container-prediction">
+      <video id="prediction-video" class="fs-video">
+        <source id="prediction-video-source" src=""
+                type="video/mp4">
+      </video>
+    </div>
+    
+    <div class="container container-print">
+      print
+    </div>
+
+    <script type="text/javascript" src="js/joypad.min.js"></script>
+    <script type="text/javascript" src="js/gsap.min.js"></script>
+    <script type="text/javascript" src="videos.js"></script>
+    <script type="text/javascript" src="js/zoltar.js"></script>
+  </body>
+</html>
