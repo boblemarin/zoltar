@@ -50,10 +50,12 @@ let printContainer = document.querySelector('.container-print');
 
 let pvp = document.querySelector('#prediction-video');
 
-let videoAnswers = videoFiles.split('\n');
-videoAnswers = videoAnswers.filter(n => n); // remove empty elements
+let playList = [];
 
-let answersToPlay = 0;
+//let videoAnswers = videoFiles.split('\n');
+//videoAnswers = videoAnswers.filter(n => n); // remove empty elements
+
+//let answersToPlay = 0;
 
 gsap.to([choiceContainer, predictionContainer, printContainer], {
   autoAlpha: 0,
@@ -110,8 +112,9 @@ function introButtonPressed(id) {
 }
 
 function choiceButtonPressed(id) {
-  answersToPlay = 3;
   buttonFunction = null;
+  populatePlaylist();
+  //answersToPlay = 3;
   gsap.to(document.querySelector('.choice-question-1'), {
     autoAlpha: (id == 0)?1:0,
     duration: 0.2
@@ -138,7 +141,8 @@ function choiceButtonPressed(id) {
         duration: 0.5,
         autoAlpha: 0
       });
-      playRandomPrediction();
+      //playRandomPrediction();
+      playNextPrediction();
       gsap.to(predictionContainer, {
         duration: 1,
         autoAlpha: 1
@@ -167,8 +171,9 @@ function printButtonPressed(id) {
 pvp.addEventListener('ended', onPredictionVideoEnded);
 
 function onPredictionVideoEnded(event) {
-  if (--answersToPlay > 0) {
-      playRandomPrediction();
+  if (playList.length > 0) {
+      //playRandomPrediction();
+      playNextPrediction();
   } else {
   gsap.to(predictionContainer, {
     duration: 1,
@@ -184,6 +189,24 @@ function onPredictionVideoEnded(event) {
 
 
 // UTILITY FUNCTIONS
+
+function populatePlaylist() {
+  let chapters = Object.getOwnPropertyNames(videoFiles).sort();
+  playList.length = 0;
+  for (let index in chapters) {
+    let a = videoFiles[chapters[index]];
+    playList.push('video/reponses/'+chapters[index]+'/'+a[Math.random() * a.length >> 0])
+  }
+  console.log(playList);
+}
+
+function playNextPrediction() {
+  let vps = document.querySelector('#prediction-video-source');
+  vps.setAttribute('src',playList.shift());
+  let vp = document.querySelector('#prediction-video');
+  vp.load();
+  rewindVideoPlayer(vp);
+}
 
 function playRandomPrediction() {
 
