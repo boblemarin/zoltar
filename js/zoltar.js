@@ -53,6 +53,8 @@ let pvp = document.querySelector('#prediction-video');
 let videoAnswers = videoFiles.split('\n');
 videoAnswers = videoAnswers.filter(n => n); // remove empty elements
 
+let answersToPlay = 0;
+
 gsap.to([choiceContainer, predictionContainer, printContainer], {
   autoAlpha: 0,
   duration: 0
@@ -108,6 +110,7 @@ function introButtonPressed(id) {
 }
 
 function choiceButtonPressed(id) {
+  answersToPlay = 3;
   buttonFunction = null;
   gsap.to(document.querySelector('.choice-question-1'), {
     autoAlpha: (id == 0)?1:0,
@@ -164,6 +167,9 @@ function printButtonPressed(id) {
 pvp.addEventListener('ended', onPredictionVideoEnded);
 
 function onPredictionVideoEnded(event) {
+  if (--answersToPlay > 0) {
+      playRandomPrediction();
+  } else {
   gsap.to(predictionContainer, {
     duration: 1,
     autoAlpha: 0
@@ -173,6 +179,7 @@ function onPredictionVideoEnded(event) {
     autoAlpha: 1,
     onComplete: function() { buttonFunction = printButtonPressed }
   });
+  }
 }
 
 
