@@ -1,9 +1,9 @@
 const fs = require('fs');
 
-
+const sep = "\\";// "/";//
 
 const projectDir = __dirname;//"E:/Expos/KERMESSE/DEV/Zoltar/html/";
-const videoDir = "\\video\\reponses\\";
+const videoDir = sep+"video"+sep+"reponses"+sep;
 
 console.log(projectDir + videoDir);
 
@@ -24,7 +24,7 @@ subDirs.forEach(file => {
 
 let output = JSON.stringify(videos);
 
-fs.writeFileSync(projectDir + "\\videos.js", "let videoFiles = " + output + ";");
+fs.writeFileSync(projectDir + sep + "videos.js", "let videoFiles = " + output + ";");
 
 
 console.log("done...");
