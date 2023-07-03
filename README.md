@@ -1,6 +1,6 @@
 # Zoltar
 ## Installation
-1. Installer [Node.js](https://nodejs.org/dist/v18.16.1/node-v18.16.1-x64.msi)
+1. Installer [Node.js](https://nodejs.org/dist/v18.16.1/node-v18.16.1-x64.msi) si ce n'est déjà fait.
 
 2. Télécharger [les fichiers de ce projet](https://github.com/boblemarin/zoltar/archive/refs/heads/main.zip)
 
