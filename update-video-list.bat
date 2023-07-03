@@ -1,4 +1,4 @@
 @ECHO OFF
 if not exist "video\reponses" mkdir video\reponses
-node listVideos.js
-pause
+node js/listVideos.js
+TIMEOUT 2
