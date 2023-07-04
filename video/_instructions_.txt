@@ -1,5 +1,7 @@
-A côté de ce fichier, 
-il faut mettre la vidéo d'intro qui s'appelle :
-  intro.mp4
+Dans le dossier "reponses",
+il faut créer des sous-dossiers et y mettre les morceaux qui doivent être assemblés.
 
-voilà
+Dans le dossier "intro",
+mettre les différentes vidéos qui seront choisies aux hasard.
+
+Bon amusement...
