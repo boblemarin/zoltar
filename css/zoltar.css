@@ -54,6 +54,8 @@ body {
 	margin: 100px 5px;
 	text-align: center;
 	opacity: 0;
+	text-transform: uppercase;
+	font-weight: bolder;
 }
 
 .choice-question:nth-child(1) {

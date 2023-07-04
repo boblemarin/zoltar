@@ -52,10 +52,9 @@ let pvp = document.querySelector('#prediction-video');
 
 let playList = [];
 
-//let videoAnswers = videoFiles.split('\n');
-//videoAnswers = videoAnswers.filter(n => n); // remove empty elements
+let questions = questionSrc.split('\n');
+questions = questions.filter(n => n); // remove empty elements
 
-//let answersToPlay = 0;
 
 gsap.to([choiceContainer, predictionContainer, printContainer], {
   autoAlpha: 0,
@@ -80,8 +79,28 @@ function onButtonPressed(id) {
   if (buttonFunction) buttonFunction(id);
 }
 
+function getRandomQuestions() {
+  let q = [];
+  let i  =[];
+  while(q.length < 3) {
+    let ni = Math.random() * questions.length >> 0;
+    if (i.indexOf(ni) == -1) {
+      q.push(questions[ni]);
+      i.push(ni);
+    }
+  }
+  return q;
+}
+
 function introButtonPressed(id) {
   buttonFunction = null;
+
+  // display random questions
+  let q = getRandomQuestions();
+  question1.innerText = "A) " + q[0];
+  question2.innerText = "B) " + q[1];
+  question3.innerText = "C) " + q[2];
+
   gsap.to(introContainer, {
     duration: 1, 
     autoAlpha: 0, 
