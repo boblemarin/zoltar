@@ -179,7 +179,8 @@ function printButtonPressed(id) {
     duration: 1,
     autoAlpha: 0
   });
-  rewindVideoPlayer(document.querySelector('#intro-video'));
+  //rewindVideoPlayer(document.querySelector('#intro-video'));
+  playRandomIntroVideo();
   gsap.to(introContainer, {
     duration: 3,
     autoAlpha: 1,
@@ -240,6 +241,15 @@ function playRandomPrediction() {
 
 function stopVideoPlayer(vp) {
   vp.pause();
+}
+
+function playRandomIntroVideo() {
+  let vps = document.querySelector('#intro-video-source');
+  vps.setAttribute('src','video/intros/'+ introFiles[Math.random() * introFiles.length >> 0]);
+
+  let vp = document.querySelector('#intro-video');
+  vp.load();
+  rewindVideoPlayer(vp);
 }
 
 function rewindVideoPlayer(vp) {
