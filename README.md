@@ -17,6 +17,14 @@ Dans le dossier `video`, il faut :
 ### Content update
 Lorsque le contenu du dossier `video` est modifié, il faut lancer le script qui va mettre à jour la liste des vidéos. Pour cela, il faut double-cliquer le fichier `update-video-list.bat`. Le processus ne dure qu'une fraction de seconde. Il ré-écrit le contenu du fichier `js/video.js` qui est utilisé par l'appli.
 
+### Les Questions
+Le questions se trouvent dans le fichier `questions.js` à la racine du projet. Il ne faut pas toucher la première et la dernière ligne, mais on peut y laisser des lignes vides pour faciliter la lecture et la maintenance.
+
 ## Exécution
 Pour lancer le projet, une fois la préparation complète, il suffit d'ouvrir la page `index.html`.
 Pour une expérience complète (fullscreen, autoplay et tout), il faut avoir quitté Brave complètement afin de le lancer en mode Kiosque, mais ça on en reparle juste après.
+
+Les interactions se font avec les trois premiers boutons d'une manette de jeu, mais on peut aussi utiliser les flèches du clavier par facilité.
+- Flèche gauche : bouton 1
+- Flèche bas : bouton 2
+- Flèche droite : bouton 3
